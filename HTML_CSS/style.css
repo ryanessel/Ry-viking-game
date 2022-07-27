@@ -1,0 +1,50 @@
+html{
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ), url(./img/vikingbattlebackground.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: 'Cormorant SC', serif;
+}
+
+.tImage{
+    max-width: 5vw;
+}
+
+#mainContent{
+    display:flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+#vikingArmy{
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+}
+
+#saxxonArmy{
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+}
+
+.npc{
+    display:flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    padding-top:2vw;
+    font-size:larger
+}
+
+.versus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+}
+
+.tStatus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
