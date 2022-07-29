@@ -21,7 +21,7 @@ html{
     justify-content: space-between;
 }
 
-#saxxonArmy{
+#saxonArmy{
     display:flex;
     flex-flow:column;
     justify-content: space-between;
@@ -42,9 +42,32 @@ html{
     font-size: 10vw;
 }
 
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonText{
+   font-size: 3vw;
+   height: 8vw;
+   font-family: 'Cormorant SC', serif;
+}
+
 .tStatus{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#warStart{
+    display: flex;
+    justify-content: center;
+}
+
+#warStartb{
+    font-size: 3vw;
+    height: 8vw;
+    font-family: 'Cormorant SC', serif;
 }
