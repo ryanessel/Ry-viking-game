@@ -6,7 +6,7 @@ if we feel we need to take a peek at what the instructions while on github.
 Also, slack won't let you see the previous messages if too many messages are made if you don't have premium account so I want
 to have them somewhere I know they won't be deleted.
 
-※※※※※※※※※※※※※※※※VIKING GAME INSTRUCTIONS※※※※※※※※※※※※※※※※※※※※※※※※
+※※※※※※※※※※※※VIKING GAME INSTRUCTIONS※※※※※※※※※※※※※※※※※※※
 
 //※※※※※1st Iteration※※※※※
 
