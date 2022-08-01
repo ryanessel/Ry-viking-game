@@ -24,7 +24,8 @@ class Viking extends Soldier {
     receiveDamage = function (dmg) {
         this.health -= dmg;
         if (this.health > 0){
-            return `${this.name} has received ${dmg} points of damage`
+            return dmg;
+            // return `${this.name} has received ${dmg} points of damage`
         } else {
             return `${this.name} has died in act of combat`
         }
@@ -43,7 +44,8 @@ class Saxon extends Soldier {
         receiveDamage = function (dmg) {
            this.health -= dmg;
            if (this.health > 0){
-               return `A Saxon has received ${dmg} points of damage`
+            return dmg
+            //    return `A Saxon has received ${dmg} points of damage`
            } else {
                return `A Saxon has died in combat`
            }
@@ -164,12 +166,12 @@ class War {
 let thisWar = new War;// must be declared outside of the functio for us to access it after the function has worked on it.
                       // if redeclared in the function it will always be an "empty war"; array length zero for both armies -Ry
 
-document.getElementById("warStartb").onclick = function () {
+// document.getElementById("warStat").onclick = function () {
        
-    startWar();
-}
+//     showStatus();
+// }
 
-
+//startWar() adds 5 random vikings and 5 random saxons
 function startWar (){ // adjusted function so that it has a name and can be called like above. We dont' have to do it like this but I 
                       // it might be help be eaiser to know what this fucntion does at a glance if we gave it a name. -Ry
   
@@ -189,7 +191,7 @@ function startWar (){ // adjusted function so that it has a name and can be call
     /*Add 5 vikings*/
    
 
-    //on click of a button that could be called "add viking" and respectivly "add saxon" is when the 
+ 
     let htmlString = `
     <image class='tImage' src="./img/viking.png"></image>
     <div id="viking${i}" class="tStatus">
@@ -198,7 +200,8 @@ function startWar (){ // adjusted function so that it has a name and can be call
         <strong>Strength:</strong><span class="npcStr"></span>
     </div>`;  // needs to 
     let newRow = document.createElement("div");
-    newRow.classList.add("npc");
+
+    newRow.classList.add("npc"); 
     newRow.innerHTML = htmlString;
     document.getElementById(`vikingArmy`).appendChild(newRow);
 
@@ -246,4 +249,65 @@ function startWar (){ // adjusted function so that it has a name and can be call
 // -Ry 
 
 
+function refresh() { // loop through chekc for the length.
+    for (let i = 1; i <= 5; i++){
+        // console.log(thisWar.addViking(i));
+    
+            console.log(i)
+            
+            if (document.querySelector(`#viking${i} .npcHealth`).innerText <= 0 )
 
+            document.querySelector(`#viking${i} .npcHealth`).innerText = thisWar.vikingArmy[i-1].health;
+           
+            
+            document.querySelector(`#saxon${i} .npcHealth`).innerText = thisWar.saxonArmy[i-1].health;
+         
+        
+
+        }
+}
+
+
+document.querySelector('#buttonViking').onclick = event => {
+    
+    thisWar.vikingAttack();
+    console.log(thisWar.saxonArmy);
+    refresh();
+}
+
+
+
+document.querySelector('#buttonSaxon').onclick = event => {
+    console.log(thisWar.saxonAttack());
+    thisWar.saxonAttack();
+    refresh();
+    
+    
+    
+}
+
+
+
+let vikingArmyLength = document.querySelectorAll('#vikingArmy .npcHealth').length;
+
+let saxonArmyLength = document.querySelectorAll('#saxonArmy .npcHealth').length;
+
+// let allSaxons = document.querySelectorAll('#saxonArmy .npcHealth')
+
+
+function test1 () {
+
+for (let i = 0; i <= saxonArmyLength; i++) {
+    
+
+    document.querySelector(`#viking${i} .npcName`).innerText = thisWar.vikingArmy[i].name;
+    document.querySelector(`#viking${i} .npcHealth`).innerText = thisWar.vikingArmy[i].health;
+    document.querySelector(`#viking${i} .npcStr`).innerText = thisWar.vikingArmy[i].strength;
+    thisWar.addSaxon(i);
+    document.querySelector(`#saxon${i} .npcHealth`).innerText = thisWar.saxonArmy[i].health;
+    document.querySelector(`#saxon${i} .npcStr`).innerText = thisWar.saxonArmy[i].strength
+
+
+}
+
+}
